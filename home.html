@@ -1,26 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HTML Tutorials</title>
+  <style>
+    /* Reset styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* General styling */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      width: 100%;
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    main {
+      max-width: 800px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+      margin: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 15px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 20px;
+      color: #555;
+    }
+
+    article {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    iframe {
+      border: none;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      animation: popUp 1s ease forwards;
+      transform: scale(0);
+    }
+
+    ul {
+      list-style: none;
+      font-size: 1rem;
+      color: #333;
+      text-align: left;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 10px;
+      animation: slideIn 1s ease forwards;
+    }
+
+    ul li:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #66a6ff;
+    }
+
+    /* Keyframes for animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popUp {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+  </style>
 </head>
 <body>
   <header>
-<nav><pre>     <a href="about.html">About Us</a>     <a href="https://instagram.com/allen69.in" target="_blank">Instagram</a>      <a href="https://github.com/garuna69" target="_blank">Github</a> </pre></nav> <hr>
+    <nav>
+      <a href="about.html">About Us</a>
+      <a href="https://instagram.com/allen69.in" target="_blank">Instagram</a>
+      <a href="https://github.com/garuna69" target="_blank">Github</a>
+    </nav>
   </header>
   <main>
-    <h1>HTML Learning journey</h1>
-    <h2>About Html</h2>
-    <article>HTML (HyperText Markup Language) is the standard language for creating web pages and web applications. It provides the structure of a website, using "tags" and "elements" that browsers interpret to display text, images, and interactive elements.</article> <br><br> <hr>
-    <b><big>Read this Wikipedia article for more knowledge on HTML</big></b><br> <br>
-    <iframe src="https://en.m.wikipedia.org/wiki/HTML5" height="500" width="330" frameborder="0">HTML</iframe> <br><br><hr>
+    <h1>HTML Learning Journey</h1>
+    <h2>About HTML</h2>
+    <article>HTML (HyperText Markup Language) is the standard language for creating web pages and web applications. It provides the structure of a website, using "tags" and "elements" that browsers interpret to display text, images, and interactive elements.</article>
+    
+    <b><big>Read this Wikipedia article for more knowledge on HTML</big></b><br><br>
+    <iframe src="https://en.m.wikipedia.org/wiki/HTML5" height="500" width="330"></iframe><br><br>
+    
     <p><b><big>Before starting HTML what should be learn?</big></b></p>
-      <ul><b>
-        <li>Overview of computer Hardware</li>
-        <li>Networking knowledge <small>(for understand how network and other things works) </small></li>
-        <li>Computer Basics amd basic MS Office Knowledge</li></b>
-      </ul>
+    <ul>
+      <li>Overview of Computer Hardware</li>
+      <li>Networking Knowledge <small>(for understanding how networks and other things work)</small></li>
+      <li>Computer Basics and basic MS Office Knowledge</li>
+    </ul>
   </main>
+
+  <script>
+    // Simple hover animations on links
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        link.style.transform = 'scale(1.2)';
+      });
+      link.addEventListener('mouseout', () => {
+        link.style.transform = 'scale(1)';
+      });
+    });
+  </script>
 </body>
 </html>
