@@ -4,28 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Tutorials</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #121212;
+        color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      
+      header {
+        text-align: center;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #00aaff;
+        font-size: 1.2em;
+        margin: 0 10px;
+        transition: transform 0.5s, color 0.5s;
+      }
+
+      nav a:hover {
+        color: #ff4081;
+        transform: rotateY(360deg) scale(1.2);
+      }
+
+      h1 {
+        font-size: 2em;
+        color: #ff4081;
+        animation: glow 1.5s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px #ff4081, 0 0 20px #ff4081, 0 0 30px #ff4081;
+        }
+        to {
+          text-shadow: 0 0 20px #00aaff, 0 0 30px #00aaff, 0 0 40px #00aaff;
+        }
+      }
+
+      form {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        transform: perspective(1000px) rotateX(0);
+        transition: transform 1s ease-in-out;
+      }
+
+      form:hover {
+        transform: perspective(1000px) rotateX(15deg);
+      }
+
+      input[type="text"], input[type="number"], input[type="email"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        background: #333;
+        color: #f5f5f5;
+        font-size: 1em;
+        transition: background 0.5s, transform 0.5s;
+      }
+
+      input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+        background: #444;
+        transform: scale(1.1);
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #00aaff;
+        color: white;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: background 0.5s, transform 0.5s;
+      }
+
+      input[type="submit"]:hover {
+        background: #ff4081;
+        transform: scale(1.1) rotate(5deg);
+      }
+    </style>
   </head>
-<body>
-  <header>
-<nav><pre>     <a href="about.html">About Us</a>     <a href="https://instagram.com/allen69.in" target="_blank">Instagram</a>      <a href="https://github.com/garuna69" target="_blank">Github</a> </pre></nav> <hr>
-  </header>
-  <h1>Sign in/Sign up your account</h1> <br><br>
- <form action="home.html" id="sign_up">
-  Already have an account? <a href="sign_in.html">Sign In</a>
-   <br><br><br>
-  Name: <input type="text" placeholder="Enter your good name"> <br><br>
-  Username: <input type="text" placeholder="Create your username"> <br><br>
-  Mobile Number: <input type="number" placeholder="Your number"> <br><br>
-  E-mail: <input type="email" placeholder="Enter your email"> <br><br>
-  Create password: <input type="password" name="password" id="password" placeholder="create password"> <br><br>
-  Age: <input type="number" placeholder="Age" min="13" max="60"> <br><br>
-   Select your hobbies <br> <br>
-  <label for="hobbies">
-    <input type="checkbox" name="coding" id="hobbies">Coding</label> <br><br>
-    <label for="Hacking">
-    <input type="checkbox" name="Hacking" id="Hacking">Hacking</label>
-    <br><br><br>
-    <lable> <input type="submit" id="sign_up_form"> </lable>
- </form>
-</body>
-</html>
+  <body>
+    <header>
+      <nav>
+        <a href="about.html">About Us</a>
+        <a href="https://instagram.com/allen69.in" target="_blank">Instagram</a>
+        <a href="https://github.com/garuna69" target="_blank">Github</a>
+      </nav>
+      <hr>
+    </header>
+    <h1>Sign in/Sign up your account</h1>
+    <br><br>
+    <form action="home.html" id="sign_up">
+      Already have an account? <a href="sign_in.html">Sign In</a>
+      <br><br><br>
+      Name: <input type="text" placeholder="Enter your good name"> <br><br>
+      Username: <input type="text" placeholder="Create your username"> <br><br>
+      Mobile Number: <input type="number" placeholder="Your number"> <br><br>
+      E-mail: <input type="email" placeholder="Enter your email"> <br><br>
+      Create password: <input type="password" name="password" id="password" placeholder="create password"> <br><br>
+      Age: <input type="number" placeholder="Age" min="13" max="60"> <br><br>
+      Select your hobbies <br> <br>
+      <label for="hobbies">
+        <input type="checkbox" name="coding" id="hobbies">Coding</label> <br><br>
+      <label for="Hacking">
+        <input type="checkbox" name="Hacking" id="Hacking">Hacking</label>
+      <br><br><br>
+      <label><input type="submit" id="sign_up_form"></label>
+    </form>
+    
+    <script>
+      // Add a simple animation for header text on click
+      document.querySelector('h1').addEventListener('click', () => {
+        document.querySelector('h1').style.transform = 'rotateX(360deg)';
+        setTimeout(() => {
+          document.querySelector('h1').style.transform = 'rotateX(0)';
+        }, 1000);
+      });
+
+      // Add a click animation on form submit button
+      document.getElementById('sign_up_form').addEventListener('click', (e) => {
+        e.preventDefault(); // prevent form submission for demo
+        document.getElementById('sign_up').style.transform = 'rotateY(360deg)';
+        setTimeout(() => {
+          document.getElementById('sign_up').style.transform = 'rotateY(0)';
+        }, 1000);
+      });
+    </script>
+  </body>
+        </html>
