@@ -125,8 +125,6 @@
       // Add click animation for the form elements
       document.getElementById('sign_in_form').addEventListener('click', (e) => {
         e.preventDefault(); // prevent form submission for demo
-        document.getElementById('sign_in').style.transform = 'rotateY(360deg)';
-        setTimeout(() => {
           document.getElementById('sign_in').style.transform = 'rotateY(0)';
         }, 1000);
       });
