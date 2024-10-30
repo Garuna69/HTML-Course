@@ -137,8 +137,6 @@
       });
 
       // Add a click animation on form submit button
-      document.getElementById('sign_up_form').addEventListener('click', (e) => {
-        e.preventDefault(); // prevent form submission for demo
         document.getElementById('sign_up').style.transform = 'rotateY(360deg)';
         setTimeout(() => {
           document.getElementById('sign_up').style.transform = 'rotateY(0)';
